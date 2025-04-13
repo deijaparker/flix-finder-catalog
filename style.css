@@ -158,6 +158,22 @@ button:hover {
   color: #222;
 }
 
+.favorite-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffcc00;
+  color: #222;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 3em;
