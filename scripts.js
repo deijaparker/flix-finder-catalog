@@ -269,3 +269,54 @@ function sortMovies() {
 
   showCards();
 }
+
+// Display movie cards on the page
+function showCards() {
+  const cardContainer = document.getElementById("card-container");
+  cardContainer.innerHTML = "";
+  const templateCard = document.querySelector(".card");
+
+  // If no movies match the current filters, show a message
+  if (currentMovies.length === 0) {
+    const noResultsMsg = document.createElement("p");
+    noResultsMsg.textContent = "No movies found matching your criteria.";
+    noResultsMsg.style.fontSize = "1.5rem";
+    noResultsMsg.style.color = "#ffcc00";
+    noResultsMsg.style.margin = "30px";
+    cardContainer.appendChild(noResultsMsg);
+    return;
+  }
+
+  // Create a card for each movie in the current collection
+  for (let i = 0; i < currentMovies.length; i++) {
+    const movie = currentMovies[i];
+    const nextCard = templateCard.cloneNode(true);
+
+    editCardContent(nextCard, movie);
+
+    // Add a favorite button/indicator
+    const cardContent = nextCard.querySelector(".card-content");
+    cardContent.style.position = "relative";
+
+    const favoriteBtn = document.createElement("div");
+    favoriteBtn.className = "favorite-badge";
+    favoriteBtn.innerHTML = "♥";
+    favoriteBtn.style.color = favoriteMovies.some(
+      (favMovie) => favMovie.id === movie.id
+    )
+      ? "#ff0000"
+      : "#222";
+    favoriteBtn.onclick = function (event) {
+      event.stopPropagation();
+      toggleFavorite(movie);
+      favoriteBtn.style.color = favoriteMovies.some(
+        (favMovie) => favMovie.id === movie.id
+      )
+        ? "#ff0000"
+        : "#222";
+    };
+
+    cardContent.appendChild(favoriteBtn);
+    cardContainer.appendChild(nextCard);
+  }
+}
