@@ -360,3 +360,23 @@ function getRandomMovie() {
   // Show a message
   alert(`Random Movie Selected: ${randomMovie.title}`);
 }
+
+// Toggle a movie as favorite
+function toggleFavorite(movie) {
+  const existingIndex = favoriteMovies.findIndex(
+    (favMovie) => favMovie.id === movie.id
+  );
+
+  if (existingIndex !== -1) {
+    // If movie is already a favorite, remove it
+    favoriteMovies.splice(existingIndex, 1);
+  } else {
+    // Otherwise, add it to favorites
+    favoriteMovies.push(movie);
+  }
+
+  // If showing favorites, refresh the display
+  if (document.getElementById("genre-filter").value === "favorites") {
+    showFavorites();
+  }
+}
