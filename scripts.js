@@ -176,3 +176,6 @@ const movies = [
       "A young African-American visits his white girlfriend's parents for the weekend where his uneasiness escalates into horror.",
   },
 ];
+
+// Clone of the full movie list for filtering/sorting
+let currentMovies = [...movies];
