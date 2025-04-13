@@ -320,3 +320,30 @@ function showCards() {
     cardContainer.appendChild(nextCard);
   }
 }
+
+// Edit the content of a card with movie information
+function editCardContent(card, movie) {
+  card.style.display = "block";
+
+  const cardHeader = card.querySelector("h2");
+  cardHeader.textContent = movie.title;
+
+  const cardImage = card.querySelector("img");
+  cardImage.src = movie.imageURL;
+  cardImage.alt = movie.title + " Poster";
+
+  const movieYear = card.querySelector(".movie-year");
+  movieYear.textContent = "Year: " + movie.year;
+
+  const movieRating = card.querySelector(".movie-rating");
+  movieRating.textContent = "Rating: " + movie.rating;
+
+  const movieGenre = card.querySelector(".movie-genre");
+  movieGenre.textContent = "Genre: " + movie.genre;
+
+  const movieDirector = card.querySelector(".movie-director");
+  movieDirector.textContent = "Director: " + movie.director;
+
+  const movieOverview = card.querySelector(".movie-overview");
+  movieOverview.textContent = movie.overview;
+}
