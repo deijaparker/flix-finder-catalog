@@ -188,3 +188,22 @@ document.addEventListener("DOMContentLoaded", function () {
   populateGenreFilter();
   showCards();
 });
+
+// Populate the genre dropdown with unique genres from the movies array
+function populateGenreFilter() {
+  const genreFilter = document.getElementById("genre-filter");
+  const genres = new Set();
+
+  // Get all unique genres from the movies array
+  movies.forEach((movie) => {
+    genres.add(movie.genre);
+  });
+
+  // Add each genre as an option in the dropdown
+  genres.forEach((genre) => {
+    const option = document.createElement("option");
+    option.value = genre;
+    option.textContent = genre;
+    genreFilter.appendChild(option);
+  });
+}
