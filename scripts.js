@@ -347,3 +347,16 @@ function editCardContent(card, movie) {
   const movieOverview = card.querySelector(".movie-overview");
   movieOverview.textContent = movie.overview;
 }
+
+// Display a random movie
+function getRandomMovie() {
+  const randomIndex = Math.floor(Math.random() * movies.length);
+  const randomMovie = movies[randomIndex];
+
+  // Set current movies to just the random movie
+  currentMovies = [randomMovie];
+  showCards();
+
+  // Show a message
+  alert(`Random Movie Selected: ${randomMovie.title}`);
+}
