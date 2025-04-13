@@ -380,3 +380,17 @@ function toggleFavorite(movie) {
     showFavorites();
   }
 }
+
+// Show only favorite movies
+function showFavorites() {
+  if (favoriteMovies.length === 0) {
+    alert("You haven't added any favorites yet!");
+    return;
+  }
+
+  currentMovies = [...favoriteMovies];
+  showCards();
+
+  // Update the select element to reflect that we're showing favorites
+  document.getElementById("genre-filter").value = "all";
+}
