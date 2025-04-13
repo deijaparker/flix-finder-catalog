@@ -135,7 +135,7 @@ const movies = [
     rating: 8.8,
     genre: "Fantasy",
     imageURL:
-      "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Lord_of_the_Rings%2C_TFOTR_%282001%29.jpg",
+      "https://musicart.xboxlive.com/7/e88d5100-0000-0000-0000-000000000002/504/image.jpg",
     overview:
       "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth.",
   },
