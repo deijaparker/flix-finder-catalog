@@ -182,3 +182,9 @@ let currentMovies = [...movies];
 
 // Array to store favorite movies
 let favoriteMovies = [];
+
+// Initialize the page when DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  populateGenreFilter();
+  showCards();
+});
