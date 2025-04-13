@@ -8,17 +8,19 @@ body {
 }
 
 .main-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  text-align: center;
 }
 
 .title {
   text-align: center;
   margin: 0;
-  font-size: 8em;
-  font-family: "Helvetica";
+  font-size: 4em;
+  font-family: "Staatliches", sans-serif;
   font-weight: normal;
-  color: white;
+  color: #ffcc00;
+  text-shadow: 2px 2px 0px #000, 4px 4px 0px #555;
 }
 
 #card-container {
