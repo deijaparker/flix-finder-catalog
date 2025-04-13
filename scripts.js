@@ -207,3 +207,16 @@ function populateGenreFilter() {
     genreFilter.appendChild(option);
   });
 }
+
+// Filter movies by selected genre
+function filterByGenre() {
+  const selectedGenre = document.getElementById("genre-filter").value;
+
+  if (selectedGenre === "all") {
+    currentMovies = [...movies];
+  } else {
+    currentMovies = movies.filter((movie) => movie.genre === selectedGenre);
+  }
+
+  showCards();
+}
