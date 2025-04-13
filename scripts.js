@@ -220,3 +220,21 @@ function filterByGenre() {
 
   showCards();
 }
+
+// Search movies by title
+function searchMovies() {
+  const searchTerm = document
+    .getElementById("search-input")
+    .value.trim()
+    .toLowerCase();
+
+  if (searchTerm === "") {
+    currentMovies = [...movies];
+  } else {
+    currentMovies = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(searchTerm)
+    );
+  }
+
+  showCards();
+}
