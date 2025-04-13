@@ -179,3 +179,6 @@ const movies = [
 
 // Clone of the full movie list for filtering/sorting
 let currentMovies = [...movies];
+
+// Array to store favorite movies
+let favoriteMovies = [];
