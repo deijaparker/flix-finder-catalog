@@ -238,3 +238,34 @@ function searchMovies() {
 
   showCards();
 }
+
+// Sort movies based on the selected sort option
+function sortMovies() {
+  const sortOption = document.getElementById("sort-select").value;
+
+  switch (sortOption) {
+    case "title-asc":
+      currentMovies.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "title-desc":
+      currentMovies.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+    case "year-asc":
+      currentMovies.sort((a, b) => a.year - b.year);
+      break;
+    case "year-desc":
+      currentMovies.sort((a, b) => b.year - a.year);
+      break;
+    case "rating-desc":
+      currentMovies.sort((a, b) => b.rating - a.rating);
+      break;
+    case "rating-asc":
+      currentMovies.sort((a, b) => a.rating - b.rating);
+      break;
+    default:
+      // Default sort by title ascending
+      currentMovies.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  showCards();
+}
